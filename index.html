@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tejbánya — Érlelt sajt Gyergyóújfaluból · a Bányász család gazdasága</title>
+<meta name="description" content="Félkemény érlelt sajt a Bányász család gyergyóújfalui gazdaságából. Sajtrendelés, kóstoló és látogatás bejelentkezéssel.">
+<meta property="og:title" content="Tejbánya — Érlelt sajt Gyergyóújfaluból">
+<meta property="og:description" content="A Bányász család életérzése a Tejbányában alakul, érlelődik.">
+<meta property="og:image" content="https://bucu135.github.io/tejbanya-latvanyterv/img/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:url" content="https://bucu135.github.io/tejbanya-latvanyterv/"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..800,0..100,0..1;1,9..144,300..800,0..100,0..1&family=Hanken+Grotesk:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#efe7d8; --paper2:#e6dbc6; --kraft:#d9c39d; --ink:#191612; --ink2:#4a4239; --muted:#7c7064;
+  --rind:#b4782c; --rind-text:#875614; --night:#12100d; --line:rgba(25,22,18,.16);
+  --f-d:"Fraunces",Georgia,serif; --f-b:"Hanken Grotesk",system-ui,sans-serif; --f-m:"DM Mono",ui-monospace,monospace;
+  --pad:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--f-b);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.mono{font:500 13px/1.3 var(--f-m);letter-spacing:.08em;text-transform:uppercase}
+.disp{font-family:var(--f-d);font-weight:400;font-variation-settings:"opsz" 144,"SOFT" 50,"WONK" 0;line-height:1.14;letter-spacing:-.02em}
+.disp em{font-style:italic;font-variation-settings:"opsz" 144,"SOFT" 100,"WONK" 1}
+.btn{position:relative;overflow:hidden;isolation:isolate;transform:translateY(0);transition:transform .35s cubic-bezier(.2,.7,.2,1),background .25s,color .35s,border-color .25s;display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:999px;font:600 15px/1 var(--f-b);text-decoration:none;border:1.5px solid currentColor;transition:background .25s,color .25s,border-color .25s;cursor:pointer;background:none;color:inherit}
+.btn.fill{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:var(--rind);transform:translateY(102%);transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover::before{transform:none}
+.btn.fill:hover{border-color:var(--rind)}
+.btn:not(.fill):not(.cream):hover{color:#fff;border-color:var(--rind)}
+.btn.cream{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.btn.cream::before{background:var(--kraft)}
+.btn.cream:hover{border-color:var(--kraft)}
+
+/* fejléc — lebegő, sáv nélkül */
+.nav{position:fixed;inset:0 0 auto;z-index:40;color:#f4ecdf;transition:color .3s}
+.nav::before{content:"";position:absolute;inset:0 0 -36px;background:linear-gradient(180deg,rgba(12,10,8,.6),rgba(12,10,8,0));pointer-events:none;transition:opacity .3s}
+.nav.solid{color:var(--ink)}
+.nav.dk::before{background:linear-gradient(180deg,rgba(18,16,13,.94) 52%,rgba(18,16,13,0))}
+.nav.solid::before{background:linear-gradient(180deg,rgba(239,231,216,.97) 55%,rgba(239,231,216,0))}
+.nav .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo img{width:30px;filter:invert(1);transition:filter .3s,transform .6s cubic-bezier(.3,1.6,.5,1);transform-origin:50% 90%}
+.logo:hover img{transform:rotate(-12deg) translateY(-2px)}
+.nav.solid .logo img{filter:none}
+.logo b{font:500 25px/1 var(--f-d);font-variation-settings:"opsz" 72,"SOFT" 50}
+.navr{display:flex;align-items:center;gap:26px}
+.nav ul{display:flex;gap:26px;list-style:none;font:500 15px/1 var(--f-b)}
+.nav ul li{opacity:0;transform:translateY(-10px);animation:navIn .7s cubic-bezier(.2,.7,.2,1) forwards}
+.nav ul li:nth-child(1){animation-delay:.35s}.nav ul li:nth-child(2){animation-delay:.42s}.nav ul li:nth-child(3){animation-delay:.49s}.nav ul li:nth-child(4){animation-delay:.56s}.nav ul li:nth-child(5){animation-delay:.63s}.nav ul li:nth-child(6){animation-delay:.7s}
+@keyframes navIn{to{opacity:1;transform:none}}
+.nav ul a{position:relative;text-decoration:none;opacity:.9;padding:6px 0;transition:opacity .25s}
+.nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.nav ul a:hover,.nav ul a.cur{opacity:1}
+.nav ul a:hover::after,.nav ul a.cur::after{transform:scaleX(1);transform-origin:left}
+.lang{position:relative;display:flex;border:1px solid currentColor;border-radius:999px;overflow:hidden;font:500 12px/1 var(--f-m)}
+.lang .pill{position:absolute;top:0;bottom:0;left:0;width:0;border-radius:999px;background:#f4ecdf;transition:transform .5s cubic-bezier(.7,0,.2,1),width .5s cubic-bezier(.7,0,.2,1),background .3s}
+.nav.solid .lang .pill{background:var(--ink)}
+.lang button{position:relative;z-index:1;background:none;border:0;padding:9px 11px;cursor:pointer;color:inherit;font:inherit;opacity:.75;transition:color .4s,opacity .3s}
+.lang button.on{opacity:1;color:var(--ink)}
+.nav.solid .lang button.on{color:var(--paper)}
+
+/* HERO */
+.hero{position:relative;height:190svh;background:var(--paper);color:#f4ecdf}
+.stage{position:sticky;top:0;z-index:2;height:100svh;min-height:600px;overflow:hidden}
+.disc{position:absolute;inset:0;overflow:hidden;background:var(--night)}
+.vsw{position:fixed;right:16px;bottom:16px;z-index:55;display:flex;align-items:center;gap:6px;padding:6px 6px 6px 14px;border-radius:999px;background:var(--ink);color:var(--paper);font:500 12px/1 var(--f-m);letter-spacing:.06em;box-shadow:0 10px 30px -10px rgba(0,0,0,.5);transform:translate3d(0,0,0)}
+.vsw button{white-space:nowrap;border:0;border-radius:999px;padding:8px 11px;background:none;color:inherit;font:inherit;cursor:pointer;opacity:.7;transition:background .3s,color .3s,opacity .3s}
+.vsw button.on{background:var(--paper);color:var(--ink);opacity:1}
+.vsw small{font-size:12px;opacity:.75;margin-right:4px}
+.word h1.photo{position:absolute;left:0;right:0;bottom:0;margin:0 auto;opacity:0;background:url(img/bw-1.webp) center 40%/cover;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:none;pointer-events:none}
+.word .wrap{position:relative}
+@media (max-width:860px){.vsw{right:50%;transform:translate3d(50%,0,0);bottom:58px;padding:5px;gap:2px}.vsw small{display:none}.vsw button{padding:8px 9px}}
+.ring{position:absolute;left:50%;top:46%;width:0;height:0;border-radius:50%;pointer-events:none;opacity:0;transform:translate(-50%,-50%);box-shadow:0 0 0 7px #cf9a4c,0 0 0 15px #9a611d,0 0 0 17px #5e3a10,0 40px 70px -24px rgba(60,35,10,.6)}
+.disc>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08) brightness(.82)}
+.disc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,6,.35),rgba(10,8,6,0) 30%,rgba(10,8,6,.1) 55%,rgba(10,8,6,.85))}
+.hero-top{position:absolute;z-index:2;left:0;right:0;top:120px}
+.hero-top .wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:30px}
+.hero-top p{max-width:34ch;font:500 clamp(18px,1.6vw,22px)/1.45 var(--f-b);color:#efe5d6;text-shadow:0 1px 14px rgba(0,0,0,.5)}
+.hero-top .mono{display:block;margin-bottom:12px;color:#e9c991}
+.stamp{flex:none;width:clamp(120px,12vw,170px);aspect-ratio:1;position:relative}
+.stamp svg{width:100%;height:100%;animation:spin 26s linear infinite}
+.stamp img{position:absolute;inset:31%;width:38%;filter:invert(1)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.word{position:absolute;z-index:5;left:0;right:0;bottom:3vh}
+.word h1{text-align:center;font:400 clamp(84px,19.5vw,330px)/.86 var(--f-d);font-variation-settings:"opsz" 144,"SOFT" 30,"WONK" 1;letter-spacing:-.045em;margin-left:-.04em;white-space:nowrap;padding-bottom:.17em}
+.word .row{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;padding-bottom:22px}
+.word .cta{display:flex;gap:12px;flex-wrap:wrap}
+.word .score{font:500 14px/1.4 var(--f-m);letter-spacing:.06em;text-align:right;color:#e7ddcd}
+.word .score b{display:block;font:400 36px/1 var(--f-d);letter-spacing:0;color:#fff}
+
+/* INTRO — mondat képekkel */
+/* a történet a felgördülő kép mögül bukkan elő, közvetlenül a felúszó felirat alatt */
+.intro{position:relative;z-index:1;margin-top:calc(-90svh + min(20.1vw,340px) + 34px);padding:0 0 clamp(64px,9vw,110px)}
+.intro .mono{color:var(--rind-text);margin-bottom:28px}
+.statement{font-size:clamp(34px,4.6vw,72px);max-width:20ch}
+.statement .pic{display:inline-block;width:1.7em;height:.86em;border-radius:999px;overflow:hidden;vertical-align:-.06em;margin:0 .06em}
+.statement .pic img{width:100%;height:100%;object-fit:cover}
+.intro-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,6vw,96px);margin-top:clamp(48px,6vw,80px);align-items:start}
+.intro-grid p{font-size:18px;color:var(--ink2);max-width:52ch}
+.intro-grid p+p{margin-top:14px}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:14px 20px;align-items:baseline;border-top:1.5px solid var(--ink);padding-top:22px}
+.facts b{font:400 46px/1 var(--f-d);font-variation-settings:"opsz" 144;font-variant-numeric:tabular-nums;text-align:right}
+.facts span{color:var(--ink2);font-size:16px}
+
+/* ÉRLELÉS — ragadós sajtkorong */
+.ripen{background:var(--paper2);padding:clamp(72px,9vw,120px) 0}
+.ripen-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,72px)}
+.ripen-head h2{font-size:clamp(42px,5.4vw,84px)}
+.ripen-head p{font-size:18px;color:var(--ink2);max-width:44ch}
+.ripen-body{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,96px)}
+.wheel-col{position:relative}
+.wheel-sticky{position:sticky;top:14vh;display:flex;flex-direction:column;align-items:center;gap:26px}
+.wheel{--p:0;width:min(30vw,420px);aspect-ratio:1;border-radius:50%;position:relative;
+  background:radial-gradient(circle at 50% 50%,
+   color-mix(in oklab,#f6efdc calc(100% - var(--p)*55%),#e9c26e) 0 58%,
+   color-mix(in oklab,#efe3c3 calc(100% - var(--p)*100%),#8a5517) 63% 100%);
+  box-shadow:inset 0 0 0 calc(4px + var(--p)*10px) color-mix(in oklab,#e8dcc0 calc(100% - var(--p)*100%),#6e4210),0 30px 60px -30px rgba(60,35,10,.5);transition:transform .2s}
+.wheel::before{content:"";position:absolute;inset:16%;border-radius:50%;background:
+  radial-gradient(circle at 30% 35%,rgba(255,255,255,.35) 0 2px,transparent 3px),
+  radial-gradient(circle at 62% 58%,rgba(120,80,20,.18) 0 5px,transparent 6px),
+  radial-gradient(circle at 45% 72%,rgba(120,80,20,.14) 0 4px,transparent 5px),
+  radial-gradient(circle at 70% 30%,rgba(120,80,20,.14) 0 3px,transparent 4px);opacity:calc(.3 + var(--p)*.7)}
+.wheel::after{content:"";position:absolute;inset:28%;border-radius:50%;border:2px dashed color-mix(in oklab,transparent calc(100% - var(--p)*100%),rgba(70,40,8,.45))}
+.wheel img{position:absolute;inset:36%;width:28%;opacity:calc(.15 + var(--p)*.5)}
+.daybox{text-align:center}
+.day{font:400 clamp(56px,6vw,96px)/1 var(--f-d);font-variation-settings:"opsz" 144;font-variant-numeric:tabular-nums}
+.daybox .mono{color:var(--muted);margin-top:8px}
+.steps{display:grid;gap:clamp(48px,9vh,110px);padding-bottom:10vh}
+.step{display:grid;grid-template-columns:1fr;gap:18px;opacity:.35;transition:opacity .5s}
+.step.on{opacity:1}
+.step .ph{border-radius:22px;overflow:hidden;aspect-ratio:16/10}
+.step .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.step .mono{color:var(--rind-text)}
+.step h3{font-size:clamp(28px,2.6vw,40px)}
+.step p{color:var(--ink2);max-width:50ch}
+
+/* FOTÓESSZÉ */
+.essay{background:var(--night);color:#efe6d8;padding:clamp(80px,10vw,130px) 0}
+.essay h2{font-size:clamp(42px,5.4vw,84px);max-width:14ch}
+.essay .lead{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.essay .lead p{color:#cbc1b4;font-size:18px;max-width:46ch}
+.collage{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.collage figure{position:relative}
+.collage .im{border-radius:16px;overflow:hidden;background:#2a2520}
+.collage img{width:100%;height:100%;object-fit:cover}
+.collage figcaption{display:flex;gap:12px;margin-top:10px;font:400 14px/1.4 var(--f-b);color:#b9ae9f}
+.collage figcaption .mono{color:#e1b56a;font-size:12px}
+.c1{grid-column:1/8}.c1 .im{aspect-ratio:4/3}
+.c2{grid-column:8/13;margin-top:18%}.c2 .im{aspect-ratio:3/4}
+.c3{grid-column:2/6}.c3 .im{aspect-ratio:3/4}
+.c4{grid-column:6/13;margin-top:10%}.c4 .im{aspect-ratio:3/2}
+.c5{grid-column:1/5;margin-top:-6%}.c5 .im{aspect-ratio:1}
+.c6{grid-column:5/10}.c6 .im{aspect-ratio:3/2}
+.bwimg img{filter:grayscale(1) contrast(1.06)}
+.bigq{margin:clamp(70px,9vw,120px) auto 0;max-width:22ch;text-align:center;font-size:clamp(30px,3.6vw,54px)}
+.bigq cite{display:block;margin-top:20px;font:500 14px/1.3 var(--f-m);letter-spacing:.08em;text-transform:uppercase;font-style:normal;color:#e1b56a}
+
+/* SAJTOK — címkék */
+.cheese{padding:clamp(80px,10vw,130px) 0}
+.cheese-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.cheese-head h2{font-size:clamp(42px,5.4vw,84px)}
+.cheese-head p{font-size:18px;color:var(--ink2);max-width:46ch}
+.labels{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,34px)}
+.label{position:relative;background:var(--kraft);border-radius:20px 20px 20px 20px;padding:72px 26px 26px;display:flex;flex-direction:column;align-items:center;text-align:center;
+  background-image:radial-gradient(rgba(90,60,20,.07) 1px,transparent 1.2px);background-size:7px 7px;box-shadow:0 22px 40px -28px rgba(60,40,10,.6)}
+.label::before{content:"";position:absolute;top:22px;left:50%;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:var(--paper);box-shadow:inset 0 1px 2px rgba(0,0,0,.35)}
+.label::after{content:"";position:absolute;top:-34px;left:50%;width:1.5px;height:64px;background:#6b5432;transform:rotate(8deg);transform-origin:bottom}
+.label .round{width:72%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:6px solid rgba(255,250,240,.55);box-shadow:0 12px 26px -14px rgba(50,30,5,.7)}
+.label .round img{width:100%;height:100%;object-fit:cover}
+.label .tag{margin-top:18px;color:var(--rind-text);font-size:12px}
+.label h3{font-size:32px;margin-top:6px}
+.label p{font-size:16px;color:var(--ink2);margin-top:8px}
+.ripe{display:flex;align-items:center;gap:10px;margin-top:16px;font:400 13px/1 var(--f-m);color:var(--ink2)}
+.ripe i{display:flex;gap:4px}
+.ripe i b{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--ink2)}
+.ripe i b.f{background:var(--ink2)}
+.label .foot{display:flex;justify-content:space-between;align-items:center;width:100%;margin-top:auto;padding-top:20px;border-top:1.5px dashed rgba(60,40,10,.35)}
+.label .foot{margin-top:auto}
+.label .ripe{margin-bottom:22px}
+.price{font:400 28px/1 var(--f-d);font-variant-numeric:tabular-nums}
+.price small{font:500 13px/1 var(--f-m);color:var(--ink2);margin-left:4px}
+.add{border:1.5px solid var(--ink);background:none;border-radius:999px;padding:11px 16px;font:600 14px/1 var(--f-b);cursor:pointer;color:var(--ink);transition:background .2s,color .2s}
+.add:hover,.add.done{background:var(--ink);color:var(--kraft)}
+.add{transition:background .2s,color .2s,transform .4s cubic-bezier(.3,1.7,.5,1)}
+.add.done{animation:pop .5s cubic-bezier(.3,1.7,.5,1)}
+.bk-row{animation:rowIn .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes rowIn{from{opacity:0;transform:translateX(-10px)}}
+.note{margin-top:26px;font-size:15px;color:var(--muted);max-width:70ch}
+
+/* LÁTOGATÁS */
+.visit{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#f5ede1;overflow:hidden;border-radius:44px;margin:0 clamp(10px,1.4vw,20px)}
+.visit>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.visit::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,11,8,.82) 0%,rgba(14,11,8,.55) 42%,rgba(14,11,8,0) 70%)}
+.visit .wrap{position:relative;z-index:2;width:100%;padding-top:100px;padding-bottom:clamp(48px,7vw,90px)}
+.visit .box{max-width:560px}
+.visit .mono{color:#e9c991}
+.visit h2{font-size:clamp(40px,4.8vw,74px);margin:16px 0 20px}
+.visit p{font-size:18px;color:#e6dccd}
+.visit ul{list-style:none;margin:24px 0 30px;display:grid;gap:10px}
+.visit li{display:flex;gap:12px;color:#f0e7da}
+.visit li::before{content:"✳";color:#e1b56a}
+.reviews{padding:clamp(56px,7vw,90px) 0 0}
+.rv-row{display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:clamp(20px,3vw,44px);align-items:start}
+.rscore b{display:block;font:400 clamp(64px,6vw,96px)/1 var(--f-d)}
+.rscore span{font-size:13px}
+.rv-row blockquote{border-top:1.5px solid var(--ink);padding-top:18px;font:400 21px/1.45 var(--f-d);font-variation-settings:"opsz" 24}
+.rv-row blockquote cite{display:block;margin-top:12px;font:500 13px/1.3 var(--f-m);letter-spacing:.06em;text-transform:uppercase;font-style:normal;color:var(--muted)}
+
+/* RENDELŐCÉDULA */
+.order{padding:clamp(80px,10vw,130px) 0}
+.order-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(36px,6vw,90px);align-items:start}
+.order-grid h2{font-size:clamp(42px,5.2vw,80px)}
+.order-grid .side p{font-size:18px;color:var(--ink2);margin:20px 0 26px;max-width:40ch}
+.order-grid .side ul{list-style:none;display:grid;gap:10px;font:400 15px/1.4 var(--f-m);color:var(--ink2)}
+.slip{position:relative;background:#fbf7ef;padding:clamp(26px,3.4vw,46px);border-radius:6px;box-shadow:0 30px 60px -36px rgba(50,35,10,.5);
+  background-image:repeating-linear-gradient(180deg,transparent 0 35px,rgba(25,22,18,.05) 35px 36px)}
+.slip::before{content:"";position:absolute;left:0;right:0;top:-9px;height:18px;background:radial-gradient(circle at 9px 9px,var(--paper) 6px,transparent 6.5px) 0 0/18px 18px repeat-x}
+.slip-h{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5px solid var(--ink);padding-bottom:14px;margin-bottom:22px}
+.slip-h b{font:400 28px/1 var(--f-d)}
+.slip-h span{color:var(--muted)}
+.basket{margin-bottom:22px}
+.bk-row{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--line);font-size:16px}
+.bk-row .q{display:flex;align-items:center;gap:8px;font:400 14px/1 var(--f-m)}
+.bk-row .q button{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);background:#fff;cursor:pointer;font:600 15px/1 var(--f-b)}
+.bk-row .s{font:400 15px/1 var(--f-m);min-width:76px;text-align:right}
+.bk-empty{font:400 14px/1.5 var(--f-m);color:var(--muted);padding:6px 0 4px}
+.bk-tot{display:flex;justify-content:space-between;padding-top:12px;font:500 15px/1 var(--f-m)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.slip label,.slip .lbl{display:block;margin-bottom:16px;font:500 12px/1.2 var(--f-m);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.slip input,.slip textarea{display:block;width:100%;margin-top:6px;padding:10px 2px;border:0;border-bottom:1.5px solid var(--ink);background:transparent;font:400 18px/1.4 var(--f-b);color:var(--ink);border-radius:0;letter-spacing:0;text-transform:none}
+.slip input:focus,.slip textarea:focus{outline:none;border-bottom-color:var(--rind)}
+.slip textarea{min-height:70px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips label{margin:0;text-transform:none;letter-spacing:0;font:500 15px/1 var(--f-b)}
+.chips input{display:none}
+.chips span{display:inline-block;padding:10px 15px;border:1.5px solid var(--ink);border-radius:999px;cursor:pointer;color:var(--ink);transition:background .25s,color .25s,transform .4s cubic-bezier(.3,1.7,.5,1)}
+.chips span:hover{transform:translateY(-2px)}
+.chips input:checked+span{animation:pop .45s cubic-bezier(.3,1.7,.5,1)}
+@keyframes pop{40%{transform:scale(1.08)}}
+.chips input:checked+span{background:var(--ink);color:#fbf7ef}
+.send{width:100%;justify-content:center;margin-top:10px;font-size:16px;padding:18px}
+.ok{display:none;margin-top:16px;padding:14px 16px;border-radius:10px;background:#f2e2c2;color:var(--rind-text);font:500 15px/1.45 var(--f-b)}
+.ok.show{display:block}
+
+/* KAPCSOLAT */
+.contact{background:var(--night);color:#efe6d8;border-radius:44px 44px 0 0;padding:clamp(72px,9vw,120px) 0 40px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:stretch}
+.contact h2{font-size:clamp(42px,5.2vw,80px)}
+.cinfo{display:grid;grid-template-columns:auto 1fr;gap:14px 26px;margin-top:34px;align-items:baseline}
+.cinfo dt{font:500 12px/1.2 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:#a99d8e}
+.cinfo dd{font-size:18px}
+.cinfo a{text-decoration:none;border-bottom:1px solid rgba(239,230,216,.3)}
+.social{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.social a{padding:10px 16px;border:1.5px solid rgba(239,230,216,.3);border-radius:999px;text-decoration:none;font:500 15px/1 var(--f-b)}
+.social a:hover{border-color:#efe6d8}
+.map{position:relative;border-radius:26px;overflow:hidden;min-height:400px;background:#3a332b url(img/csorda.webp) center/cover}
+.map::before{content:"";position:absolute;inset:0;background:rgba(12,10,8,.45)}
+.map button{position:absolute;inset:0;margin:auto;width:max-content;height:max-content;z-index:2}
+.map small{position:absolute;left:0;right:0;bottom:16px;text-align:center;font-size:13px;z-index:2;color:#e7ddce}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3}
+.endword{font:400 clamp(70px,16vw,260px)/.9 var(--f-d);font-variation-settings:"opsz" 144,"WONK" 1;letter-spacing:-.045em;color:#2c2620;margin-top:clamp(56px,8vw,110px);white-space:nowrap;overflow:hidden}
+footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:18px 0 90px;border-top:1px solid rgba(239,230,216,.14);font-size:14px;color:#9d9284}
+/* ===== KÉPKEZELÉS: a képek is „érnek” ===== */
+/* papírszemcse — egy réteg, blend nélkül */
+.grain{position:fixed;inset:0;z-index:45;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* hero: kerek sajtkorongból nyílik ki */
+.disc>img{animation:open 1.8s cubic-bezier(.7,0,.2,1) both}
+@keyframes open{from{clip-path:circle(0% at 70% 55%)}to{clip-path:circle(150% at 70% 55%)}}
+/* a nagy név: a betűkben az alkonyi legelő */
+.word h1{background:linear-gradient(rgba(240,196,120,.38),rgba(240,196,120,.38)),url(img/legelo.webp) center 62%/cover;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.endword{background:url(img/legelo.webp) center 70%/cover;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;opacity:.55}
+/* érlelés-lépések: korongból nyílnak, nyomatból színesre érnek */
+.step .ph{clip-path:circle(36% at 50% 50%);transition:clip-path 1.1s cubic-bezier(.7,0,.2,1)}
+.step.seen .ph{clip-path:inset(0 round 22px)}
+.step .ph img{filter:grayscale(1) sepia(.55) contrast(1.05) brightness(1.02);transform:scale(1.18);transition:filter 1.4s ease,transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.step.seen .ph img{filter:none;transform:scale(1.02)}
+.step .ph.bw img{filter:grayscale(1) sepia(.55)}
+.step.seen .ph.bw img{filter:grayscale(1) contrast(1.06)}
+/* fotóesszé: formák + parallax + színesedés */
+.collage .im{position:relative}
+.collage .im img{transform:translate3d(0,var(--py,0px),0) scale(1.14);filter:grayscale(1) sepia(.5) contrast(1.04);transition:filter 1.4s ease}
+.collage figure.live .im img{filter:none}
+.collage figure.bwimg.live .im img{filter:grayscale(1) contrast(1.06)}
+.c5 .im{border-radius:50%;box-shadow:0 0 0 10px rgba(225,181,106,.12)}
+.c3 .im{border-radius:999px 999px 16px 16px}
+.c2 .im{clip-path:polygon(0 9%,100% 0,100% 100%,0 100%);border-radius:0}
+.c6 .im{border-radius:120px 16px 16px 16px}
+/* címkék: a sajtkorong forog egy kicsit */
+.label .round img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.label:hover .round img{transform:rotate(14deg) scale(1.06)}
+@media (prefers-reduced-motion:reduce){.disc>img{animation:none}.step .ph,.step .ph img,.collage .im img{transition:none}}
+
+.demo{position:fixed;left:16px;bottom:16px;transform:translate3d(0,0,0);z-index:50;background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:999px;font:500 13px/1.3 var(--f-b);box-shadow:0 10px 30px -10px rgba(0,0,0,.5);white-space:nowrap}
+
+/* blog */
+.blog{padding:clamp(80px,10vw,130px) 0}
+.blog-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:52px}
+.blog-head h2{font-size:clamp(42px,5.4vw,84px);margin-top:14px}
+.blog-head .mono{color:var(--rind-text)}
+.blog-head p{font-size:18px;color:var(--ink2);max-width:46ch}
+.posts{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:clamp(18px,2.4vw,34px);margin-bottom:44px}
+.post{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit}
+.post .pimg{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3}
+.post:first-child .pimg{aspect-ratio:4/3.4}
+.post img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) sepia(.35);transition:filter .8s,transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.post:hover img{filter:none;transform:scale(1.05)}
+.post .pnum{position:absolute;left:14px;top:12px;font:400 40px/1 var(--f-d);color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.post .pmeta{color:var(--muted);font-size:12px;margin-top:8px}
+.post h3{font-size:clamp(26px,2.4vw,36px);transition:color .3s}
+.post:hover h3{color:var(--rind-text)}
+.post p{color:var(--ink2);font-size:16px}
+.post .pmore{font:600 14px/1 var(--f-b);margin-top:4px;display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.post:hover .pmore{transform:translateX(6px)}
+@media (max-width:860px){.blog-head,.posts{grid-template-columns:1fr;gap:26px}.post:first-child .pimg{aspect-ratio:4/3}}
+
+/* futó sáv */
+.proof{background:var(--ink);color:var(--paper);overflow:hidden;padding:22px 0}
+.proof .track{display:flex;width:max-content;animation:marq 38s linear infinite}
+.proof:hover .track{animation-play-state:paused}
+.proof .set{display:flex;align-items:center;gap:34px;padding-right:34px}
+.proof span{display:flex;align-items:baseline;gap:12px;white-space:nowrap}
+.proof b{font:400 26px/1 var(--f-d);font-variation-settings:"opsz" 72}
+.proof i{font:400 13px/1 var(--f-m);letter-spacing:.06em;text-transform:uppercase;font-style:normal;color:#d9b47a}
+.proof .dot{width:14px;height:14px;border-radius:50%;background:radial-gradient(circle,#e9c26e 0 45%,#9a611d 50%)}
+@keyframes marq{to{transform:translateX(-50%)}}
+/* videó */
+.vid{padding:clamp(72px,9vw,120px) 0 0}
+.vid-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,72px);align-items:center}
+.vid h2{font-size:clamp(38px,4.4vw,68px);margin:14px 0 18px}
+.vid .mono{color:var(--rind-text)}
+.vid p{font-size:18px;color:var(--ink2);max-width:44ch}
+.vcard{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:24px;overflow:hidden;cursor:pointer;background:#000}
+.vcard img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s;filter:sepia(.35) brightness(.8)}
+.vcard:hover img{transform:scale(1.05);filter:none}
+.vcard .play{position:absolute;left:50%;top:50%;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 10px rgba(239,231,216,.25);transition:transform .5s cubic-bezier(.3,1.6,.5,1),box-shadow .5s}
+.vcard .play::after{content:"";position:absolute;left:39px;top:31px;border-left:26px solid var(--ink);border-top:17px solid transparent;border-bottom:17px solid transparent}
+.vcard:hover .play{transform:scale(1.1);box-shadow:0 0 0 18px rgba(239,231,216,.18)}
+.vcard .vlab{position:absolute;left:18px;bottom:16px;font:500 13px/1.3 var(--f-m);color:#fff;background:rgba(0,0,0,.45);padding:7px 12px;border-radius:999px}
+.vcard iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.price.ask{font:500 14px/1 var(--f-m);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+.labels{grid-template-columns:repeat(4,1fr)!important}
+@media (max-width:1100px){.labels{grid-template-columns:1fr 1fr!important}}
+@media (max-width:860px){.labels{grid-template-columns:1fr!important}.vid-grid{grid-template-columns:1fr}.proof b{font-size:21px}}
+@media (prefers-reduced-motion:reduce){.proof .track{animation:none}}
+
+/* reveal — két irányba */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.shown{opacity:1;transform:none}
+h2.disp.rv{opacity:1;transform:translateY(.35em);clip-path:inset(0 0 100% 0);transition:clip-path 1.1s cubic-bezier(.7,0,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1)}
+h2.disp.rv.shown{transform:none;clip-path:inset(-10% -5% -25% -5%)}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){.nav ul li{animation:none;opacity:1;transform:none}h2.disp.rv{clip-path:none}.rv{opacity:1;transform:none;transition:none}.stamp svg{animation:none}}
+
+@media (max-width:1100px){.nav ul{display:none}.labels{grid-template-columns:1fr 1fr}.rv-row{grid-template-columns:1fr 1fr}}
+@media (max-width:860px){
+  body{font-size:16px}
+  .nav .wrap{height:70px}
+  .hero-top{top:96px}
+  .hero-top .wrap{flex-direction:column-reverse;gap:18px}
+  .stamp{width:104px}
+  .word{bottom:calc(64px + 4vh)}
+  .word h1{font-size:22vw}
+  .intro{margin-top:calc(-88svh + 22.7vw + 30px)}
+
+  .word .row{padding-bottom:14px}
+  .word .row{flex-direction:column;align-items:flex-start}
+  .word .score{text-align:left}
+  .intro-grid,.ripen-head,.essay .lead,.cheese-head,.order-grid,.contact-grid{grid-template-columns:1fr;gap:26px}
+  .ripen{border-radius:28px 28px 0 0}
+  .ripen-body{grid-template-columns:1fr}
+  .wheel-col{position:sticky;top:64px;z-index:3;background:var(--paper2);padding:10px 0 12px;margin:0 calc(var(--pad)*-1);padding-left:var(--pad);padding-right:var(--pad)}
+  .wheel-sticky{position:static;flex-direction:row;justify-content:flex-start;gap:18px}
+  .wheel{width:86px}
+  .daybox{text-align:left}
+  .day{font-size:44px}
+  .daybox .mono{margin-top:4px}
+  .steps{gap:56px;padding-bottom:0}
+  .collage{grid-template-columns:1fr 1fr;gap:12px}
+  .collage figure{grid-column:auto!important;margin-top:0!important}
+  .c1,.c4{grid-column:1/3!important}
+  .labels{grid-template-columns:1fr;gap:56px;padding-top:30px}
+  .visit{min-height:0;border-radius:28px;margin:0 8px}
+  .visit::after{background:linear-gradient(180deg,rgba(14,11,8,.15) 0%,rgba(14,11,8,.85) 55%)}
+  .visit .wrap{padding-top:280px}
+  .rv-row{grid-template-columns:1fr}
+  .f2{grid-template-columns:1fr;gap:0}
+  .contact{border-radius:28px 28px 0 0}
+  .map{min-height:300px}
+  .demo{font-size:12px;bottom:12px;left:50%;transform:translate3d(-50%,0,0)}
+}
+@media (max-width:420px){.lang button{padding:8px 8px}.logo b{font-size:22px}}
+
+/* hamburgermenü */
+.burger{display:none;position:relative;width:44px;height:44px;border:1px solid currentColor;border-radius:50%;background:none;color:inherit;cursor:pointer;flex:none}
+.burger span{position:absolute;left:13px;right:13px;height:1.5px;background:currentColor;border-radius:2px;transition:transform .35s cubic-bezier(.4,0,.2,1),opacity .2s ease}
+.burger span:nth-child(1){top:15px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:27px}
+.nav.mopen .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav.mopen .burger span:nth-child(2){opacity:0}
+.nav.mopen .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.nav.mopen::before{background:none!important}
+.mmenu{position:fixed;inset:0;z-index:39;background:var(--night);color:var(--paper);display:flex;flex-direction:column;justify-content:space-between;padding:104px var(--pad) 28px;overflow:hidden;
+  clip-path:circle(0% at calc(100% - var(--pad) - 22px) 42px);visibility:hidden;transition:clip-path .7s cubic-bezier(.7,0,.2,1),visibility 0s linear .7s}
+.mmenu.open{clip-path:circle(150% at calc(100% - var(--pad) - 22px) 42px);visibility:visible;transition:clip-path .7s cubic-bezier(.7,0,.2,1),visibility 0s}
+.mbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);opacity:.16;pointer-events:none}
+.mmenu::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,16,13,.2),rgba(18,16,13,.75));pointer-events:none}
+.mlinks,.mfoot{position:relative;z-index:1}
+.mlinks{display:flex;flex-direction:column}
+.mlinks a{display:grid;grid-template-columns:30px 1fr 52px;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(239,231,216,.14);text-decoration:none;color:var(--paper);opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s ease,color .25s}
+.mlinks a i{font:500 12px/1 var(--f-m);font-style:normal;letter-spacing:.08em;color:#d9a75a}
+.mlinks a b{font:400 clamp(32px,8.6vw,52px)/1.1 var(--f-d);font-variation-settings:"opsz" 144;letter-spacing:-.02em;font-weight:400}
+.mlinks a b{transition:color .25s ease}
+.mlinks a .th{transition:box-shadow .25s ease}
+.mlinks a:active b,.mlinks a:hover b,.mlinks a:focus-visible b{color:#e9c991}
+.mlinks a:active .th,.mlinks a:hover .th,.mlinks a:focus-visible .th{box-shadow:0 0 0 3px #e9c991}
+.mlinks a .th{width:52px;height:52px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 2px rgba(207,154,76,.55)}
+.mlinks a .th img{width:100%;height:100%;object-fit:cover}
+.mmenu.open .mlinks a{opacity:1;transform:none}
+.mmenu.open .mlinks a:nth-child(1){transition-delay:0.23s}.mmenu.open .mlinks a:nth-child(2){transition-delay:0.28s}.mmenu.open .mlinks a:nth-child(3){transition-delay:0.33s}.mmenu.open .mlinks a:nth-child(4){transition-delay:0.38s}.mmenu.open .mlinks a:nth-child(5){transition-delay:0.43s}.mmenu.open .mlinks a:nth-child(6){transition-delay:0.48s}
+.mfoot{display:grid;gap:16px;opacity:0;transition:opacity .5s ease .5s}
+.mmenu.open .mfoot{opacity:1}
+.mword{font:400 clamp(64px,19vw,120px)/.9 var(--f-d);font-variation-settings:"opsz" 144,"WONK" 1;letter-spacing:-.045em;background:linear-gradient(rgba(240,196,120,.38),rgba(240,196,120,.38)),url(img/legelo.webp) center 62%/cover;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-bottom:.08em}
+.mcta{justify-self:start}
+.mcont{display:flex;flex-wrap:wrap;gap:6px 18px;font:500 14px/1.4 var(--f-m)}
+.mcont a{color:#cfc4b6;text-decoration:none}
+.nav.mopen{color:var(--paper)!important}
+.nav.mopen::before{background:none!important}
+.nav.mopen .logo img{filter:invert(1)!important}
+.nav.mopen .lang .pill{background:var(--paper)!important}
+.nav.mopen .lang button.on{color:var(--ink)!important}
+@media (prefers-reduced-motion:reduce){.mmenu,.mmenu.open{transition:none}}
+@media (max-width:1100px){.burger{display:block}.navr{gap:12px}}
+
+/* ===== VISSZAFOGOTT MOZGÁS (11-18, Bence: „legyen visszafogottabb”) — csak a hero felgördülése marad ===== */
+.rv{transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+.rv.shown{transform:none}
+.rv.d1,.rv.d2,.rv.d3{transition-delay:0s}
+h2.disp.rv{clip-path:none!important;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+h2.disp.rv.shown{transform:none}
+.nav ul li{animation:none!important;opacity:1!important;transform:none!important}
+.logo img,.logo:hover img{transform:none!important}
+.lang .pill{transition:transform .35s cubic-bezier(.4,0,.2,1),width .35s cubic-bezier(.4,0,.2,1),background .3s!important}
+.lang button{transition:color .3s ease!important}
+.disc>img{animation:none!important}
+/* a pecsét lassan forog (Bence kérése, telefonon és gépen is) */
+.stamp svg{animation:spin 26s linear infinite!important;will-change:transform}
+@media (prefers-reduced-motion:reduce){.stamp svg{animation:none!important}}
+.btn::before{display:none!important}
+.btn:hover{transform:none!important}
+.btn.fill:hover{background:var(--rind)!important;border-color:var(--rind)!important}
+.btn.cream:hover{background:var(--kraft)!important}
+.chips span,.chips span:hover{transform:none!important}
+.chips input:checked+span,.add.done,.bk-row{animation:none!important}
+.step{opacity:1!important}
+.step .ph{clip-path:inset(0 round 22px)!important;transition:none!important}
+.step .ph img,.step.seen .ph img{transform:none!important;transition:none!important;filter:none!important}
+.step .ph.bw img,.step.seen .ph.bw img{filter:grayscale(1) contrast(1.05)!important}
+.collage .im img,.collage figure.live .im img{transform:none!important;filter:none!important;transition:none!important}
+.collage figure.bwimg .im img{filter:grayscale(1) contrast(1.05)!important}
+.label .round img,.label:hover .round img{transform:none!important}
+.post img,.post:hover img{filter:none!important;transform:none!important}
+.post:hover .pmore{transform:none!important}
+.vcard img,.vcard:hover img{transform:none!important;filter:brightness(.85)!important}
+.vcard:hover .play{transform:none!important}
+.proof .track{animation:none!important;width:auto;justify-content:center}
+.proof .set[aria-hidden]{display:none}
+.proof .set{flex-wrap:wrap;justify-content:center;row-gap:14px;padding:0 var(--pad)}
+.proof .set>.dot:last-child{display:none}
+</style>
+</head>
+<body id="top">
+
+<nav class="nav" id="nav"><div class="wrap">
+  <a class="logo" href="#top" aria-label="Tejbánya"><img src="img/logo.png" alt=""><b>Tejbánya</b></a>
+  <div class="navr">
+    <ul>
+      <li><a href="#gazdasag" data-i18n="n2">Gazdaság</a></li>
+      <li><a href="#erleles" data-i18n="n1">Érlelés</a></li>
+      <li><a href="#irasok" data-i18n="n6">Írások</a></li>
+      <li><a href="#sajtok" data-i18n="n3">Sajtjaink</a></li>
+      <li><a href="#latogatas" data-i18n="n4">Látogatás</a></li>
+      <li><a href="#rendeles" data-i18n="n5">Rendelés</a></li>
+    </ul>
+    <div class="lang" role="group" aria-label="Nyelv"><span class="pill" aria-hidden="true"></span><button data-l="hu">HU</button><button data-l="ro">RO</button><button data-l="en">EN</button></div>
+    <button class="burger" id="burger" aria-label="Menü" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
+  </div>
+</div></nav>
+
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <img class="mbg" src="img/bw-1.webp" alt="">
+  <nav class="mlinks" id="mlinks"></nav>
+  <div class="mfoot">
+    <div class="mword" aria-hidden="true">Tejbánya</div>
+    <a class="btn cream mcta" href="#sajtok" data-i18n="h_b1">Sajtot rendelek</a>
+    <div class="mcont"><a href="tel:+40745260960">0745 260 960</a><a href="mailto:tejbanya@gmail.com">tejbanya@gmail.com</a></div>
+  </div>
+</div>
+<header class="hero" id="hero"><div class="stage">
+  <div class="disc" id="disc"><img src="img/bw-1.webp" alt="Érlelődő sajtkerekek a Tejbánya polcán" fetchpriority="high"></div>
+  <div class="ring" id="ring"></div>
+  <div class="hero-top fade"><div class="wrap">
+    <p class="rv"><span class="mono" data-i18n="h_k">Érlelt sajt · Gyergyóújfalu</span><span data-i18n="h_s">A Bányász család gazdaságából, a saját teheneink tejéből, türelemmel érlelve.</span></p>
+    <div class="stamp rv d1" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><defs><path id="c" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+        <circle cx="100" cy="100" r="96" fill="none" stroke="#f4ecdf" stroke-width="1.5"/><circle cx="100" cy="100" r="60" fill="none" stroke="#f4ecdf" stroke-width="1" stroke-dasharray="3 5"/>
+        <text fill="#f4ecdf" font-family="DM Mono" font-size="14"><textPath href="#c" textLength="486" lengthAdjust="spacing">TEJBÁNYA · GYERGYÓÚJFALU · ÉRLELT SAJT · </textPath></text></svg>
+      <img src="img/logo.png" alt="">
+    </div>
+  </div></div>
+  <div class="word"><div class="wrap">
+    <div class="fade"><div class="row rv d2">
+      <div class="cta"><a class="btn cream" href="#sajtok" data-i18n="h_b1">Sajtot rendelek</a><a class="btn" href="#latogatas" data-i18n="h_b2">Gyertek el hozzánk</a></div>
+      <div class="score"><b>5,0 ★</b><span data-i18n="h_r">12 Google-vélemény</span></div>
+    </div></div>
+    <h1 class="rv d1">Tejbánya</h1>
+    <h1 class="photo" aria-hidden="true">Tejbánya</h1>
+  </div></div>
+</div></header>
+
+<section class="intro" id="tortenet"><div class="wrap">
+  <p class="mono rv" data-i18n="i_k">A mi történetünk</p>
+  <p class="statement disp rv d1"><span data-i18n="i_s1">A Bányász család</span> <span class="pic"><img src="img/borju-hd.webp" alt=""></span> <span data-i18n="i_s2">életérzése a <em>Tejbányában</em> alakul,</span> <span class="pic"><img src="img/sajt-1.webp" alt=""></span> <span data-i18n="i_s3">érlelődik.</span></p>
+  <div class="intro-grid">
+    <div class="rv d1"><p data-i18n="i_p1">Édesapánk, Bányász József a Caritas igazgatója volt, amikor 48 évesen úgy döntött, hogy visszatér a gyökereihez. Parasztnak született, és ide, Gyergyóújfalu szélére hozta vissza ezt az életformát.</p>
+      <p data-i18n="i_p2">Ma együtt visszük: András agrármérnökként a gazdaságot és a sajtműhelyt, édesanyánk az egyensúlyt, Anna pedig fotósként a képeket. Mintagazdaságot építünk, ami megmutatja, hogy természetközeli, jó minőségű termékből meg lehet élni.</p></div>
+    <dl class="facts rv d2">
+      <b>10</b><span data-i18n="f1">fejőstehén, mind név szerint jön fejéshez</span>
+      <b>100%</b><span data-i18n="f2">nyers tej, pasztőrözés nélkül</span>
+      <b>5,0</b><span data-i18n="f3">átlag 12 Google-vélemény alapján</span>
+    </dl>
+  </div>
+</div></section>
+
+
+<section class="essay" id="gazdasag"><div class="wrap">
+  <div class="lead"><h2 class="disp rv" data-i18n="e_t">Ami a sajton <em>nem</em> látszik.</h2><p class="rv d1" data-i18n="e_p">Kaszálás, fejés, borjazás, várakozás. A gazdaság mindennapjai, ahogy Anna, a lányunk fényképezőgépe látja.</p></div>
+  <div class="collage">
+    <figure class="c1 rv"><div class="im"><img src="img/oreg-gazda.webp" alt="" loading="lazy"></div><figcaption><span class="mono">01</span><span data-i18n="e1">Az istállóban, ahol minden kezdődik</span></figcaption></figure>
+    <figure class="c2 rv d1 bwimg"><div class="im"><img src="img/bw-2.webp" alt="" loading="lazy"></div><figcaption><span class="mono">02</span><span data-i18n="e2">Kaszálás a rét szélén</span></figcaption></figure>
+    <figure class="c3 rv"><div class="im"><img src="img/szena.webp" alt="" loading="lazy"></div><figcaption><span class="mono">03</span><span data-i18n="e3">Télire való széna</span></figcaption></figure>
+    <figure class="c4 rv d1 bwimg"><div class="im"><img src="img/tehen-fekvo.webp" alt="" loading="lazy"></div><figcaption><span class="mono">04</span><span data-i18n="e4">Pihenő a legelőn</span></figcaption></figure>
+    <figure class="c5 rv"><div class="im"><img src="img/borju-hd.webp" alt="" loading="lazy"></div><figcaption><span class="mono">05</span><span data-i18n="e5">Az új generáció</span></figcaption></figure>
+    <figure class="c6 rv d1"><div class="im"><img src="img/tehen-alkony.webp" alt="" loading="lazy"></div><figcaption><span class="mono">06</span><span data-i18n="e6">Este, hazafelé</span></figcaption></figure>
+  </div>
+  <blockquote class="bigq disp rv"><span data-i18n="e_q">„A sajt a tej elrugaszkodása <em>a halhatatlanság</em> irányába.”</span><cite data-i18n="e_c">Bányász József</cite></blockquote>
+</div></section>
+
+<section class="blog" id="irasok"><div class="wrap">
+  <div class="blog-head">
+    <div><span class="mono rv" data-i18n="bl_k">József írásai · mintatartalom</span>
+      <h2 class="disp rv d1" data-i18n="bl_t">Gondolatok <em>a csűrből.</em></h2></div>
+    <p class="rv d2" data-i18n="bl_p">Édesapánk a fejések között ír: a munkáról, a jószágról, a paraszti kultúráról és arról, mit jelent ma természetközelben élni. Ide kerülnek az írásai.</p>
+  </div>
+  <div class="posts">
+    <a class="post rv" href="blog.html">
+      <div class="pimg"><img src="img/sajtkerek.webp" alt="" loading="lazy"><span class="pnum">01</span></div>
+      <span class="mono pmeta"><span data-i18n="bl_d1">2026. október</span></span>
+      <h3 class="disp" data-i18n="bl_t1">A sajt a tej elrugaszkodása</h3>
+      <p data-i18n="bl_p1">Miért várunk három évet egy kerékre, amikor három hónap után is el lehetne adni? A türelemről, az időről és arról, amit a sajt megőriz.</p>
+      <span class="pmore" data-i18n="bl_more">Elolvasom →</span>
+    </a>
+    <a class="post rv d1" href="blog.html">
+      <div class="pimg"><img src="img/szena.webp" alt="" loading="lazy"><span class="pnum">02</span></div>
+      <span class="mono pmeta"><span data-i18n="bl_d2">2026. szeptember</span></span>
+      <h3 class="disp" data-i18n="bl_t2">Fenntartható visszavonulás</h3>
+      <p data-i18n="bl_p2">Az életszínvonalat pénzért vesszük, az életminőséget nem. Gondolatok arról, hogyan lehet szerényebben, mégis teljesebben élni.</p>
+      <span class="pmore" data-i18n="bl_more">Elolvasom →</span>
+    </a>
+    <a class="post rv d2" href="blog.html">
+      <div class="pimg"><img src="img/oreg-gazda.webp" alt="" loading="lazy"><span class="pnum">03</span></div>
+      <span class="mono pmeta"><span data-i18n="bl_d3">2026. augusztus</span></span>
+      <h3 class="disp" data-i18n="bl_t3">Nem mi tartjuk el őket</h3>
+      <p data-i18n="bl_p3">Bogi tizennyolc éves, és még mindig ő a legokosabb az istállóban. Arról, hogy a jószág nem eszköz, hanem munkatárs.</p>
+      <span class="pmore" data-i18n="bl_more">Elolvasom →</span>
+    </a>
+  </div>
+  <a class="btn rv" href="blog.html" data-i18n="bl_all">Az összes írás</a>
+</div></section>
+
+<section class="ripen" id="erleles"><div class="wrap">
+  <div class="ripen-head">
+    <h2 class="disp rv" data-i18n="r_t">Egy sajt <em>élete.</em></h2>
+    <p class="rv d1" data-i18n="r_p">Görgess végig, és nézd, ahogy a reggeli tejből érett kerék lesz. Az idő nálunk is hozzávaló.</p>
+  </div>
+  <div class="ripen-body">
+    <div class="wheel-col"><div class="wheel-sticky">
+      <div class="wheel" id="wheel"><img src="img/logo.png" alt=""></div>
+      <div class="daybox"><div class="day" id="day">0.</div><div class="mono" data-i18n="r_day">nap az érlelésben</div></div>
+    </div></div>
+    <div class="steps" id="steps">
+      <article class="step" data-day="0"><div class="ph"><img src="img/legelo.webp" alt="" loading="lazy"></div><span class="mono" data-i18n="s1k">Hajnali 5 óra · fejés</span><h3 class="disp" data-i18n="s1t">Név szerint jönnek fejésre</h3><p data-i18n="s1p">A tehenek hajnalban bejönnek, kapnak egy kis darát, és közben megtörténik a fejés. Közben a rézüst már melegszik. Este 5-kor ugyanez újra.</p></article>
+      <article class="step" data-day="0"><div class="ph bw"><img src="img/bw-3.webp" alt="" loading="lazy"></div><span class="mono" data-i18n="s2k">Reggel · a rézüstnél</span><h3 class="disp" data-i18n="s2t">25 fok, 33 fok, 35 perc</h3><p data-i18n="s2p">A leszűrt, nyers tejbe 25 fokon kerül a kultúra, 33 fokon az oltó. Fél óra alatt megalszik, akkor hárfával kukoricaszemnyire vágjuk, és 46 fokig melegítjük.</p></article>
+      <article class="step" data-day="1"><div class="ph bw"><img src="img/bw-5.webp" alt="" loading="lazy"></div><span class="mono" data-i18n="s3k">1–3. nap · forma és sós víz</span><h3 class="disp" data-i18n="s3t">Kendőben, formában, sóban</h3><p data-i18n="s3p">A sajtot kendővel szedjük formába, ahol 24 órát pihen. Utána 48 órára sós vízbe kerül, és csak azután megy a pincébe.</p></article>
+      <article class="step" data-day="3"><div class="ph bw"><img src="img/bw-1.webp" alt="" loading="lazy"></div><span class="mono" data-i18n="s4k">Kétnaponta · a polcon</span><h3 class="disp" data-i18n="s4t">Leveszed, forgatod, mosod</h3><p data-i18n="s4p">Minden kereket kétnaponta leveszünk, átforgatunk és kefével átmosunk. Az idősebbekről a fiatalabbakra visszük át a baktériumos vizet. Egy kerék 15–20 kiló.</p></article>
+      <article class="step" data-day="90"><div class="ph"><img src="img/sajtkerek.webp" alt="" loading="lazy"></div><span class="mono" data-i18n="s5k">3 hónaptól 3 évig · kész</span><h3 class="disp" data-i18n="s5t">Mindegyik a saját idejében</h3><p data-i18n="s5p">Van három hónapos, fél éves, egyéves, és van három éves is. Két évig is érlelhetnénk, de szerencsére előbb elfogy.</p></article>
+    </div>
+  </div>
+</div></section>
+
+<section class="cheese" id="sajtok"><div class="wrap">
+  <div class="cheese-head"><h2 class="disp rv" data-i18n="c_t">A polcról, <em>neked.</em></h2><p class="rv d1" data-i18n="c_p">Tedd kosárba, amit szeretnél, mi félretesszük. Visszaírunk, mikor veheted át, vagy mikor küldjük futárral.</p></div>
+  <div class="labels">
+    <article class="label rv" data-id="h3" data-p="0">
+      <div class="round"><img src="img/sajt-2.webp" alt="" loading="lazy"></div>
+      <span class="mono tag" data-i18n="t1">Fiatal · krémes</span>
+      <h3 class="disp" data-i18n="k1t">Három hónapos</h3>
+      <p data-i18n="k1p">Lágyabb, tejes, krémes. Aki most ismerkedik a nyers tejes sajttal, ezzel kezdje.</p>
+      <div class="ripe"><span data-i18n="rp">érettség</span><i><b class="f"></b><b></b><b></b><b></b></i></div>
+      <div class="foot"><span class="price ask" data-i18n="ask">ár kérésre</span><button class="add" data-i18n="add">Kosárba</button></div>
+    </article>
+    <article class="label rv d1" data-id="h6" data-p="0">
+      <div class="round"><img src="img/sajt-1.webp" alt="" loading="lazy"></div>
+      <span class="mono tag" data-i18n="t2">Félkemény · a kedvenc</span>
+      <h3 class="disp" data-i18n="k2t">Hat hónapos</h3>
+      <p data-i18n="k2p">Már karakteres, enyhén diós. Reggelihez, borhoz, sajttálra egyaránt jó.</p>
+      <div class="ripe"><span data-i18n="rp">érettség</span><i><b class="f"></b><b class="f"></b><b></b><b></b></i></div>
+      <div class="foot"><span class="price ask" data-i18n="ask">ár kérésre</span><button class="add" data-i18n="add">Kosárba</button></div>
+    </article>
+    <article class="label rv d2" data-id="y1" data-p="0">
+      <div class="round"><img src="img/gazda.webp" alt="" loading="lazy"></div>
+      <span class="mono tag" data-i18n="t3">Érett · terroir</span>
+      <h3 class="disp" data-i18n="k3t">Egyéves</h3>
+      <p data-i18n="k3p">Mély, összetett íz, amiből kiérezni a helyet. Séfek is ezt viszik.</p>
+      <div class="ripe"><span data-i18n="rp">érettség</span><i><b class="f"></b><b class="f"></b><b class="f"></b><b></b></i></div>
+      <div class="foot"><span class="price ask" data-i18n="ask">ár kérésre</span><button class="add" data-i18n="add">Kosárba</button></div>
+    </article>
+    <article class="label rv d3" data-id="kompot" data-p="35">
+      <div class="round"><img src="img/kompot.webp" alt="" loading="lazy"></div>
+      <span class="mono tag" data-i18n="t4">Karácsonyi időszakban</span>
+      <h3 class="disp" data-i18n="k4t">Sajtkompót</h3>
+      <p data-i18n="k4p">Érlelt sajtkockák curryvel, üvegben. Ajándéknak is jó.</p>
+      <div class="ripe"><span data-i18n="rp">érettség</span><i><b class="f"></b><b class="f"></b><b class="f"></b><b></b></i></div>
+      <div class="foot"><span class="price">35<small data-i18n="perdb">lej/üveg</small></span><button class="add" data-i18n="add">Kosárba</button></div>
+    </article>
+  </div>
+  <p class="note rv" data-i18n="c_n">Az aktuális árat és a kapható kerekeket rendeléskor visszaigazoljuk. Később ugyanerre a felületre kerülhet az online fizetés is, így ebből lesz a webshop.</p>
+</div></section>
+
+<section class="visit" id="latogatas">
+  <img src="img/latogatas.webp" alt="" loading="lazy">
+  <div class="wrap"><div class="box">
+    <span class="mono rv" data-i18n="v_k">Látogatás · kóstoló · Kultúrcsűr</span>
+    <h2 class="disp rv d1" data-i18n="v_t">Kóstold meg <em>ott,</em> ahol készül.</h2>
+    <p class="rv d2" data-i18n="v_p">Bejelentkezéssel szívesen megmutatjuk a gazdaságot, a teheneket és a sajtpincét. A kóstolóhoz falusi espresso jár: helyi teafű, egy csepp kávé, és egy jó beszélgetés.</p>
+    <ul class="rv d2"><li data-i18n="v1">Gazdaságlátogatás és sajtkóstoló, bejelentkezéssel</li><li data-i18n="v2">Kultúrcsűr: könyvbemutatók, olvasóestek, borkóstolók</li><li data-i18n="v3">Minden hónap első keddjén Hamvas Béla-est</li></ul>
+    <a class="btn cream rv d3" href="#rendeles" data-i18n="v_b">Bejelentkezem</a>
+  </div></div>
+</section>
+
+<section class="vid"><div class="wrap vid-grid">
+  <div>
+    <span class="mono rv" data-i18n="vd_k">Vendégségben · 123 ezer megtekintés</span>
+    <h2 class="disp rv d1" data-i18n="vd_t">Magyarósi Csaba <em>járt</em> nálunk.</h2>
+    <p class="rv d2" data-i18n="vd_p">Robival együtt egy egész napot töltöttek a gazdaságban: megismerték Bogit, a legidősebb tehenünket, végignézték a sajtkészítést, és megkóstolták a három hónapostól az egyévesig.</p>
+  </div>
+  <button class="vcard rv d1" id="vcard" aria-label="Videó lejátszása">
+    <img src="img/oreg-gazda.webp" alt="" loading="lazy"><span class="play" aria-hidden="true"></span>
+    <span class="vlab" data-i18n="vd_l">Megtaláltuk Erdélyben a mennyországot! · YouTube</span>
+  </button>
+</div></section>
+
+<section class="reviews"><div class="wrap">
+  <div class="rv-row">
+    <div class="rscore rv"><b>5,0</b><span class="mono" data-i18n="rs">12 Google-vélemény</span></div>
+    <blockquote class="rv d1"><span data-i18n="q1">„Tiszta eredetiség, tiszta gazdálkodás, mély gondolatok, finom sajtok!”</span><cite>Gyimesi Skanzen</cite></blockquote>
+    <blockquote class="rv d2"><span data-i18n="q2">„A házigazdák nemcsak kiváló sajtokat kínálnak, hanem szellemi táplálékkal is megajándékozzák a betérőket.”</span><cite>Lutz Levente</cite></blockquote>
+    <blockquote class="rv d3"><span data-i18n="q3">„Sajtfilozófia: egységben Istennel és a természettel. Szívből ajánlom a sajtokat és a gazdát, Bányász Józsefet!”</span><cite>Gergely Osadcow</cite></blockquote>
+  </div>
+</div></section>
+
+<section class="order" id="rendeles"><div class="wrap order-grid">
+  <div class="side">
+    <h2 class="disp rv" data-i18n="o_t">Rendelő<em>cédula.</em></h2>
+    <p class="rv d1" data-i18n="o_p">Egy perc az egész. Visszaírunk vagy felhívunk, és megbeszéljük az átvételt.</p>
+    <ul class="rv d2"><li data-i18n="o1">→ Átvétel személyesen Gyergyóújfaluban</li><li data-i18n="o2">→ Futárral az ország egész területére</li><li data-i18n="o3">→ Látogatásra is itt lehet bejelentkezni</li></ul>
+  </div>
+  <form class="slip rv d1" id="urlap" novalidate>
+    <div class="slip-h"><b>Tejbánya</b><span class="mono" data-i18n="sl">Rendelés · Nr. 0001</span></div>
+    <div class="basket" id="basket"></div>
+    <div class="f2">
+      <label><span data-i18n="l_nev">Név</span><input name="nev" autocomplete="name"></label>
+      <label><span data-i18n="l_tel">Telefon</span><input name="tel" type="tel" autocomplete="tel"></label>
+    </div>
+    <div class="lbl"><span data-i18n="l_mit">Mit szeretnél?</span><div class="chips">
+      <label><input type="radio" name="mit" checked><span data-i18n="m1">Sajtrendelés</span></label>
+      <label><input type="radio" name="mit"><span data-i18n="m2">Látogatás, kóstoló</span></label>
+      <label><input type="radio" name="mit"><span data-i18n="m3">Viszonteladás, vendéglátás</span></label></div></div>
+    <div class="lbl"><span data-i18n="l_atv">Átvétel</span><div class="chips">
+      <label><input type="radio" name="atv" checked><span data-i18n="a1">Személyesen</span></label>
+      <label><input type="radio" name="atv"><span data-i18n="a2">Futárral</span></label></div></div>
+    <label><span data-i18n="l_megj">Megjegyzés</span><textarea name="megj" data-i18n-ph="ph" placeholder="Pl.: mikor jönnél, hányan lesztek, szállítási cím"></textarea></label>
+    <button class="btn fill send" type="submit" data-i18n="send">Elküldöm a cédulát</button>
+    <p class="ok" id="ok" data-i18n="okmsg">Köszönjük! Ez egy látványterv, ezért a rendelés nem ment el. Az éles oldalon e-mailben megérkezne hozzátok, a küldő pedig visszaigazolást kapna.</p>
+  </form>
+</div></section>
+
+<section class="contact" id="kapcsolat"><div class="wrap">
+  <div class="contact-grid">
+    <div>
+      <h2 class="disp rv" data-i18n="k_t">Gyergyóújfalu, <em>a falu szélén.</em></h2>
+      <dl class="cinfo rv d1">
+        <dt data-i18n="k_cim">Cím</dt><dd>Strada Ciumani 25, 537305 Gyergyóújfalu (Suseni)</dd>
+        <dt data-i18n="k_tel">Telefon</dt><dd><a href="tel:+40745260960">0745 260 960</a></dd>
+        <dt>E-mail</dt><dd><a href="mailto:tejbanya@gmail.com">tejbanya@gmail.com</a></dd>
+        <dt data-i18n="k_ny">Nyitva</dt><dd data-i18n="k_nyv">Bejelentkezéssel, 17 óráig</dd>
+      </dl>
+      <div class="social rv d2"><a href="https://www.facebook.com/tejbanya" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/tejbanya/" target="_blank" rel="noopener">Instagram</a><a href="https://youtu.be/bt6mjca1hOw" target="_blank" rel="noopener" data-i18n="yt">Interjú: Csakabaj podcast</a></div>
+    </div>
+    <div class="map rv d1" id="map"><button class="btn cream" id="mapbtn" data-i18n="k_map">Térkép betöltése</button><small data-i18n="k_mapn">A térkép csak kattintásra töltődik be (Google Maps).</small></div>
+  </div>
+  <div class="endword" aria-hidden="true">Tejbánya</div>
+  <footer><span data-i18n="ft_l">© Tejbánya · Bányász család · Fotók: Bányász Anna · Cégadatok, ANPC és SAL az éles oldalon</span><span data-i18n="ft">Látványterv · készítette: László Bence</span></footer>
+</div></section>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="demo" data-i18n="demo">Látványterv: így nézhetne ki a weboldalatok</div>
+
+<script>
+const RO={
+ n1:"Maturare",n2:"Gospodăria",n3:"Brânzeturi",n4:"Vizită",n5:"Comandă",
+ h_k:"Brânză maturată · Suseni",h_s:"Din gospodăria familiei Bányász, din laptele vacilor noastre, maturată cu răbdare.",h_b1:"Comand brânză",h_b2:"Vino la noi",h_r:"12 recenzii Google",
+ i_k:"Povestea noastră",i_s1:"Stilul de viață",i_s2:"al familiei Bányász se formează în <em>Tejbánya</em>,",i_s3:"se maturează.",
+ i_p1:"Gospodărim la marginea satului Suseni. Vacile pasc pe pășunea de sub munți, iar din laptele lor facem brânză în atelierul propriu.",
+ i_p2:"Nu suntem o fabrică și nici nu vrem să fim. Facem mai puțin, dar fiecare roată trece prin mâinile noastre, de la muls până la raftul de maturare.",
+ f1:"media a 12 recenzii Google",f2:"urmăritori pe Instagram",f3:"familie o face, de la muls până la raft",
+ r_t:"Viața unei <em>brânze.</em>",r_p:"Derulează și privește cum laptele de dimineață devine o roată maturată. La noi și timpul e un ingredient.",r_day:"zile de maturare",
+ s1k:"Zori · pășune",s1t:"Totul începe cu iarba",s1p:"Vara pe pășunea de sub munți, iarna cu fân cosit de noi. Ce mănâncă vaca, simte și brânza.",
+ s2k:"Dimineața · la cazan",s2t:"Laptele proaspăt devine caș",s2p:"După mulsul de dimineață laptele ajunge direct în cazan. Aici se decide cum va fi brânza.",
+ s3k:"Ziua 1 · formare",s3t:"Formată și sărată de mână",s3p:"Cașul îl strângem în pânză, îl presăm în formă, iar a doua zi începem maturarea cu sare.",
+ s4k:"Ziua 30 · raft",s4t:"Întoarsă în fiecare săptămână",s4p:"Roțile se odihnesc pe raft, iar noi le întoarcem. Încet crește coaja și apare gustul.",
+ s5k:"Ziua 90 și mai mult · gata",s5t:"Matură, cu caracter, a noastră",s5p:"Când coaja e brună, iar miezul cremos și ușor a nucă, brânza e gata. Uneori așteptăm și mai mult.",
+ e_t:"Ce <em>nu</em> se vede pe brânză.",e_p:"Cosit, muls, fătări, așteptare. Zilele gospodăriei, așa cum le-au văzut fotografii noștri.",
+ e1:"În grajd, unde începe totul",e2:"Cosit la marginea fânețului",e3:"Fân pentru iarnă",e4:"Odihnă pe pășune",e5:"Noua generație",e6:"Seara, spre casă",
+ e_q:"„Întâlnirea armonioasă a omului, naturii și animalelor. Gospodărie model, <em>bogăție model.</em>”",e_c:"Nagy István, recenzie Google",
+ c_t:"De pe raft, <em>pentru tine.</em>",c_p:"Pune în coș ce dorești, noi o păstrăm. Îți scriem când o poți ridica sau când o trimitem prin curier.",
+ t1:"Conținut exemplu · semitare",t2:"Conținut exemplu · cu condimente",t3:"În perioada Crăciunului",
+ k1t:"Maturată Tejbánya",k1p:"Naturală, cremoasă, ușor a nucă. Cu cât se maturează mai mult, cu atât are mai mult caracter.",
+ k2t:"Maturată cu condimente",k2p:"Aceeași brânză, cu condimente din grădină. La micul dejun, la vin, pe platou.",
+ k3t:"Brânză în borcan",k3p:"Cuburi de brânză maturată cu curry, în borcan. Bună și de cadou.",rp:"maturare",perkg:"lei/kg",perdb:"lei/borcan",add:"În coș",
+ c_n:"Sortimentele și prețurile sunt exemple, le înlocuim cu oferta reală. Mai târziu se poate adăuga plata online pe aceeași pagină, astfel devine magazin online.",
+ v_k:"Vizită · degustare · Kultúrcsűr",v_t:"Gustă-o <em>acolo</em> unde se face.",v_p:"Cu programare îți arătăm cu drag gospodăria și atelierul. Pe lângă degustare, și o discuție bună.",
+ v1:"Vizită în gospodărie pentru grupuri mici, familii",v2:"Degustare în Kultúrcsűr (șura culturală)",v3:"Cumpărare de brânză pe loc",v_b:"Mă programez",
+ rs:"12 recenzii Google",q1:"„Autenticitate curată, gospodărie curată, gânduri profunde, brânzeturi delicioase!”",q2:"„Gazdele oferă nu doar brânzeturi excelente, ci și hrană spirituală celor care trec pe la ei.”",q3:"„Filozofia brânzei: în unitate cu Dumnezeu și natura. Recomand din suflet brânzeturile și gospodarul, Bányász József!”",
+ o_t:"Bon de <em>comandă.</em>",o_p:"Durează un minut. Îți scriem sau te sunăm și stabilim ridicarea.",o1:"→ Ridicare personală în Suseni",o2:"→ Prin curier în toată țara",o3:"→ Aici te poți programa și pentru vizită",
+ sl:"Comandă · Nr. 0001",bk0:"Coșul e încă gol. Adaugă brânză cu butonul „În coș”.",tot:"Total",l_nev:"Nume",l_tel:"Telefon",l_mit:"Ce dorești?",m1:"Comandă brânză",m2:"Vizită, degustare",m3:"Revânzare, HoReCa",l_atv:"Ridicare",a1:"Personal",a2:"Prin curier",l_megj:"Mențiuni",ph:"Ex.: când ai veni, câți veți fi, adresa de livrare",send:"Trimit bonul",
+ okmsg:"Mulțumim! Aceasta este o machetă, așa că comanda nu a fost trimisă. Pe site-ul real ar ajunge la voi pe e-mail, iar expeditorul ar primi o confirmare.",
+ k_t:"Suseni, <em>la marginea satului.</em>",k_cim:"Adresă",k_tel:"Telefon",k_ny:"Program",k_nyv:"Cu programare, până la ora 17",yt:"Interviu: podcastul Csakabaj",k_map:"Încarcă harta",k_mapn:"Harta se încarcă doar la click (Google Maps).",
+ ft_l:"© Tejbánya · Familia Bányász · Datele firmei, ANPC și SAL pe site-ul real",ft:"Machetă · realizată de László Bence",demo:"Machetă: așa ar putea arăta site-ul vostru",u_kg:"kg",u_db:"borcan"
+};
+const EN={
+ n1:"Ripening",n2:"The farm",n3:"Cheeses",n4:"Visit",n5:"Order",
+ h_k:"Aged cheese · Suseni, Transylvania",h_s:"From the Bányász family farm, made with our own cows' milk and aged with patience.",h_b1:"Order cheese",h_b2:"Come and visit",h_r:"12 Google reviews",
+ i_k:"Our story",i_s1:"The Bányász family's",i_s2:"way of life takes shape at <em>Tejbánya</em>",i_s3:"and ripens.",
+ i_p1:"We farm on the edge of Suseni. The cows graze below the mountains, and their milk becomes cheese in our own workshop.",
+ i_p2:"We're not a factory and don't want to be. We make less, but every wheel passes through our hands, from milking to the ageing shelf.",
+ f1:"average of 12 Google reviews",f2:"followers on Instagram",f3:"family makes it, from milking to shelf",
+ r_t:"The life of <em>a cheese.</em>",r_p:"Scroll down and watch this morning's milk become a ripe wheel. Time is an ingredient here too.",r_day:"days of ageing",
+ s1k:"Dawn · pasture",s1t:"It all starts with grass",s1p:"Pasture below the mountains in summer, our own hay in winter. What the cow eats, the cheese tastes of.",
+ s2k:"Morning · at the vat",s2t:"Fresh milk turns to curd",s2p:"After the morning milking the milk goes straight into the vat. This is where the cheese is decided.",
+ s3k:"Day 1 · shaping",s3t:"Shaped and salted by hand",s3p:"We gather the curd in cloth, press it into moulds and start ageing it with salt the next day.",
+ s4k:"Day 30 · the shelf",s4t:"Turned every week",s4p:"The wheels rest on the shelf and we turn them. Slowly a rind grows and the flavour arrives.",
+ s5k:"Day 90 and beyond · ready",s5t:"Ripe, characterful, ours",s5p:"When the rind is brown and the inside creamy and slightly nutty, the cheese is ready. Sometimes we wait even longer.",
+ e_t:"What you <em>don't</em> see on the cheese.",e_p:"Mowing, milking, calving, waiting. Farm days, as our photographers saw them.",
+ e1:"In the barn, where it all begins",e2:"Mowing at the meadow's edge",e3:"Hay for winter",e4:"Resting in the pasture",e5:"The new generation",e6:"Evening, heading home",
+ e_q:"“A harmonious meeting of people, nature and animals. A model farm, <em>a model wealth.</em>”",e_c:"István Nagy, Google review",
+ c_t:"From our shelf, <em>to you.</em>",c_p:"Add what you'd like to the basket and we'll set it aside. We'll reply when you can pick it up or when we ship it.",
+ t1:"Sample content · semi-hard",t2:"Sample content · herbs",t3:"Christmas season",
+ k1t:"Tejbánya aged",k1p:"Plain, creamy, slightly nutty. The longer it ripens, the more character it has.",
+ k2t:"Herb aged",k2p:"The same cheese with garden herbs. For breakfast, wine, or a cheese board.",
+ k3t:"Cheese in a jar",k3p:"Aged cheese cubes with curry, in a jar. A good gift, too.",rp:"ripeness",perkg:"lei/kg",perdb:"lei/jar",add:"Add",
+ c_n:"Varieties and prices are examples, to be replaced with the real range. Online payment can be added here later, turning it into a web shop.",
+ v_k:"Visits · tastings · Kultúrcsűr",v_t:"Taste it <em>where</em> it's made.",v_p:"By appointment we're happy to show you the farm and the cheese room. The tasting comes with a good conversation.",
+ v1:"Farm visits for small groups and families",v2:"Cheese tasting in the Kultúrcsűr (culture barn)",v3:"Buy cheese on site",v_b:"Book a visit",
+ rs:"12 Google reviews",q1:"“Pure authenticity, honest farming, deep thoughts, delicious cheeses!”",q2:"“The hosts offer not only excellent cheese but food for thought to everyone who stops by.”",q3:"“Cheese philosophy: in unity with God and nature. I warmly recommend the cheeses and the farmer, József Bányász!”",
+ o_t:"Order <em>slip.</em>",o_p:"It takes a minute. We'll write or call you back to arrange pick-up.",o1:"→ Pick-up in person in Suseni",o2:"→ Courier delivery across Romania",o3:"→ You can also book a visit here",
+ sl:"Order · No. 0001",bk0:"The basket is still empty. Use the “Add” buttons above.",tot:"Total",l_nev:"Name",l_tel:"Phone",l_mit:"What would you like?",m1:"Cheese order",m2:"Visit, tasting",m3:"Resale, restaurants",l_atv:"Delivery",a1:"Pick-up",a2:"Courier",l_megj:"Notes",ph:"E.g. when you'd come, how many people, delivery address",send:"Send the slip",
+ okmsg:"Thank you! This is a mockup, so the order wasn't sent. On the live site it would arrive by e-mail and the sender would get a confirmation.",
+ k_t:"Suseni, <em>on the edge of the village.</em>",k_cim:"Address",k_tel:"Phone",k_ny:"Open",k_nyv:"By appointment, until 5 pm",yt:"Interview: Csakabaj podcast",k_map:"Load map",k_mapn:"The map only loads when you click (Google Maps).",
+ ft_l:"© Tejbánya · Bányász family · Company details, ANPC and SAL on the live site",ft:"Mockup · made by László Bence",demo:"Mockup: this is how your website could look",u_kg:"kg",u_db:"jar"
+};
+Object.assign(RO,{n6:"Scrieri",bl_k:"Scrierile lui József · conținut exemplu",bl_t:"Gânduri <em>din șură.</em>",bl_p:"Tatăl nostru scrie între mulsuri: despre muncă, animale, cultura țărănească și ce înseamnă azi să trăiești aproape de natură. Aici vor apărea scrierile lui.",bl_min:"min de citit",bl_more:"Citesc →",bl_all:"Toate scrierile",bl_d1:"octombrie 2026",bl_d2:"septembrie 2026",bl_d3:"august 2026",bl_t1:"Brânza, desprinderea laptelui",bl_p1:"De ce așteptăm trei ani o roată, când am putea-o vinde după trei luni? Despre răbdare, timp și ce păstrează brânza.",bl_t2:"Retragere sustenabilă",bl_p2:"Nivelul de trai se cumpără cu bani, calitatea vieții nu. Gânduri despre cum poți trăi mai modest, dar mai deplin.",bl_t3:"Nu noi le ținem pe ele",bl_p3:"Bogi are optsprezece ani și e tot cea mai deșteaptă din grajd. Despre animal nu ca unealtă, ci ca tovarăș de muncă.",
+ i_p1:"Tatăl nostru, Bányász József, era directorul Caritas când, la 48 de ani, a hotărât să se întoarcă la rădăcini. S-a născut țăran și a adus înapoi acest mod de viață aici, la marginea satului Suseni.",
+ i_p2:"Astăzi îl ducem împreună: András, ca inginer agronom, gospodăria și atelierul, mama echilibrul, iar Anna, fotografă, imaginile. Construim o gospodărie model, care arată că se poate trăi din produse de calitate, aproape de natură.",
+ f1:"vaci de lapte, fiecare vine la muls când o strigi pe nume",f2:"lapte crud, nepasteurizat",f3:"media a 12 recenzii Google",
+ pr1b:"Cea mai bună brânză din Bazinul Carpatic",pr1:"brânză premiată · de precizat",pr2b:"Alegerea bucătarilor",pr3b:"Și la Budapesta",pr3:"Piața Fény utca · Hala Mare, periodic",pr4b:"Tehnologie elvețiană",pr4:"brânză tip Appenzeller din lapte crud",
+ s1k:"Ora 5 dimineața · mulsul",s1t:"Vin la muls pe nume",s1p:"În zori vacile intră, primesc puțină uruială și sunt mulse. Între timp cazanul de aramă se încălzește. Seara la 5, totul din nou.",
+ s2k:"Dimineața · la cazanul de aramă",s2t:"25 de grade, 33 de grade, 35 de minute",s2p:"În laptele crud strecurat punem cultura la 25 de grade și cheagul la 33. În jumătate de oră se închegă, îl tăiem cu harpa cât bobul de porumb și îl încălzim la 46 de grade.",
+ s3k:"Zilele 1–3 · formă și saramură",s3t:"În pânză, în formă, în sare",s3p:"Cu pânza punem brânza în formă, unde stă 24 de ore. Apoi 48 de ore în saramură și abia după aceea coboară în pivniță.",
+ s4k:"La două zile · pe raft",s4t:"O dai jos, o întorci, o speli",s4p:"Fiecare roată e dată jos la două zile, întoarsă și spălată cu peria. Apa cu bacterii o ducem de la cele bătrâne la cele tinere. O roată are 15–20 de kilograme.",
+ s5k:"De la 3 luni la 3 ani · gata",s5t:"Fiecare la timpul ei",s5p:"Avem de trei luni, de jumătate de an, de un an și chiar de trei ani. Am putea-o matura și doi ani, dar din fericire se termină înainte.",
+ r_day:"zile de maturare",
+ t1:"Tânără · cremoasă",k1t:"De trei luni",k1p:"Mai moale, lăptoasă, cremoasă. Cine abia face cunoștință cu brânza din lapte crud, să înceapă cu ea.",
+ t2:"Semitare · preferata",k2t:"De șase luni",k2p:"Deja are caracter, ușor a nucă. Bună la micul dejun, la vin, pe platou.",
+ t3:"Maturată · terroir",k3t:"De un an",k3p:"Gust profund, complex, în care simți locul. Pe aceasta o iau și bucătarii.",
+ t4:"În perioada Crăciunului",k4t:"Brânză în borcan",k4p:"Cuburi de brânză maturată cu curry, în borcan. Bună și de cadou.",ask:"preț la cerere",
+ c_n:"Prețul actual și roțile disponibile le confirmăm la comandă. Mai târziu se poate adăuga plata online pe aceeași pagină, astfel devine magazin online.",
+ v_p:"Cu programare îți arătăm cu drag gospodăria, vacile și pivnița de brânză. La degustare primești un espresso de sat: ceai din ierburi locale, un strop de cafea și o discuție bună.",
+ v1:"Vizită și degustare, cu programare",v2:"Kultúrcsűr: lansări de carte, seri de lectură, degustări de vin",v3:"În prima marți a fiecărei luni, seară Hamvas Béla",
+ vd_k:"În vizită · 123 de mii de vizualizări",vd_t:"Magyarósi Csaba <em>a fost</em> la noi.",vd_p:"Împreună cu Robi au petrecut o zi întreagă în gospodărie: au cunoscut-o pe Bogi, cea mai bătrână vacă a noastră, au urmărit cum se face brânza și au gustat de la cea de trei luni la cea de un an.",vd_l:"Megtaláltuk Erdélyben a mennyországot! · YouTube",
+ e_p:"Cosit, muls, fătări, așteptare. Zilele gospodăriei, așa cum le vede aparatul de fotografiat al Annei, fiica noastră.",
+ e_q:"„Brânza este desprinderea laptelui spre <em>nemurire.</em>”",e_c:"Bányász József",totq:"prețul îl confirmăm",
+ ft_l:"© Tejbánya · Familia Bányász · Foto: Bányász Anna · Datele firmei, ANPC și SAL pe site-ul real"});
+Object.assign(EN,{n6:"Writings",bl_k:"József's writings · sample content",bl_t:"Thoughts <em>from the barn.</em>",bl_p:"Our father writes between milkings: about work, animals, peasant culture and what it means to live close to nature today. His writings will appear here.",bl_min:"min read",bl_more:"Read →",bl_all:"All writings",bl_d1:"October 2026",bl_d2:"September 2026",bl_d3:"August 2026",bl_t1:"Cheese, milk's leap",bl_p1:"Why wait three years for a wheel you could sell after three months? On patience, time and what cheese preserves.",bl_t2:"Sustainable retreat",bl_p2:"Living standards are bought with money; quality of life isn't. Thoughts on living more modestly, yet more fully.",bl_t3:"We don't keep them, they keep us",bl_p3:"Bogi is eighteen and still the smartest one in the barn. On animals not as tools, but as co-workers.",
+ i_p1:"Our father, József Bányász, was the director of Caritas when, at 48, he decided to return to his roots. He was born a peasant, and he brought that way of life back here, to the edge of Suseni.",
+ i_p2:"Today we run it together: András, an agricultural engineer, the farm and the cheese room; our mother keeps the balance; Anna, a photographer, takes the pictures. We're building a model farm that shows you can make a living from honest, nature-close food.",
+ f1:"dairy cows, each comes to milking when called by name",f2:"raw milk, unpasteurised",f3:"average of 12 Google reviews",
+ pr1b:"Best cheese of the Carpathian Basin",pr1:"award-winning cheese · to confirm",pr2b:"Chefs' choice",pr3b:"In Budapest too",pr3:"Fény utca market · Great Market Hall, seasonally",pr4b:"Swiss method",pr4:"Appenzeller-style raw milk cheese",
+ s1k:"5 a.m. · milking",s1t:"They come when called by name",s1p:"At dawn the cows come in, get a little grain and are milked. Meanwhile the copper vat warms up. At 5 p.m., all over again.",
+ s2k:"Morning · at the copper vat",s2t:"25 degrees, 33 degrees, 35 minutes",s2p:"Into the strained raw milk goes the culture at 25 °C and the rennet at 33 °C. Within half an hour it sets; we cut it with the harp to corn-kernel size and heat it to 46 °C.",
+ s3k:"Days 1–3 · mould and brine",s3t:"In cloth, in moulds, in salt",s3p:"We lift the cheese into moulds with cloth, where it rests for 24 hours. Then 48 hours in brine, and only then down to the cellar.",
+ s4k:"Every other day · on the shelf",s4t:"Lift it, turn it, wash it",s4p:"Every wheel is taken down every other day, turned and brushed. We carry the bacterial wash from the older wheels to the younger ones. One wheel weighs 15–20 kg.",
+ s5k:"3 months to 3 years · ready",s5t:"Each in its own time",s5p:"We have three-month, six-month and one-year cheeses, and even a three-year one. We could age it two years, but luckily it sells out first.",
+ r_day:"days of ageing",
+ t1:"Young · creamy",k1t:"Three months",k1p:"Softer, milky, creamy. If you're new to raw milk cheese, start here.",
+ t2:"Semi-hard · the favourite",k2t:"Six months",k2p:"Already characterful, slightly nutty. Breakfast, wine or a cheese board.",
+ t3:"Mature · terroir",k3t:"One year",k3p:"Deep, complex, you can taste the place. This is the one chefs take.",
+ t4:"Christmas season",k4t:"Cheese in a jar",k4p:"Aged cheese cubes with curry, in a jar. A good gift, too.",ask:"price on request",
+ c_n:"We confirm current prices and available wheels when you order. Online payment can be added here later, turning it into a web shop.",
+ v_p:"By appointment we're happy to show you the farm, the cows and the cheese cellar. The tasting comes with a village espresso: local herb tea, a drop of coffee and a good conversation.",
+ v1:"Farm visit and cheese tasting, by appointment",v2:"Kultúrcsűr: book launches, readings, wine tastings",v3:"Hamvas Béla evening on the first Tuesday of every month",
+ vd_k:"Visitors · 123k views",vd_t:"Csaba Magyarósi <em>came</em> to visit.",vd_p:"He and Robi spent a whole day on the farm: they met Bogi, our oldest cow, watched the cheese being made and tasted everything from three months to one year.",vd_l:"Megtaláltuk Erdélyben a mennyországot! · YouTube",
+ e_p:"Mowing, milking, calving, waiting. Farm days, as seen through the camera of Anna, our daughter.",
+ e_q:"“Cheese is milk's leap towards <em>immortality.</em>”",e_c:"József Bányász",totq:"we'll confirm the price",
+ ft_l:"© Tejbánya · Bányász family · Photos: Anna Bányász · Company details, ANPC and SAL on the live site"});
+const HU={};document.querySelectorAll('[data-i18n]').forEach(e=>HU[e.dataset.i18n]=e.innerHTML);
+Object.assign(HU,{totq:"az árat visszaigazoljuk",ph:"Pl.: mikor jönnél, hányan lesztek, szállítási cím",bk0:"A kosár még üres. Fent a „Kosárba” gombbal tehetsz bele sajtot.",tot:"Összesen",u_kg:"kg",u_db:"üveg"});
+let L='hu';const D=()=>L==='ro'?RO:L==='en'?EN:HU;
+const setL=l=>{L=l;const d=D();document.documentElement.lang=l;
+ document.querySelectorAll('[data-i18n]').forEach(e=>{const v=d[e.dataset.i18n];if(v)e.innerHTML=v});
+ document.querySelectorAll('[data-i18n-ph]').forEach(e=>e.placeholder=d[e.dataset.i18nPh]);
+ document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+ const ob=document.querySelector('.lang button.on'),pl=document.querySelector('.lang .pill');if(ob&&pl){pl.style.width=ob.offsetWidth+'px';pl.style.transform=`translateX(${ob.offsetLeft}px)`}
+ try{localStorage.setItem('tb-lang',l)}catch(e){} drawB()};
+
+// kosár
+const B={};
+const drawB=()=>{const el=document.getElementById('basket'),d=D();const ks=Object.keys(B).filter(k=>B[k].q>0);
+ if(!ks.length){el.innerHTML='<p class="bk-empty">'+d.bk0+'</p>';return}
+ let t=0;el.innerHTML=ks.map(k=>{const c=document.querySelector(`.label[data-id="${k}"]`);const s=B[k].q*B[k].p;t+=s;const u=k==='kompot'?d.u_db:d.u_kg;
+  return `<div class="bk-row"><span>${c.querySelector('h3').textContent}</span><span class="q"><button type="button" data-k="${k}" data-d="-1" aria-label="−">−</button>${B[k].q} ${u}<button type="button" data-k="${k}" data-d="1" aria-label="+">+</button></span><span class="s">${B[k].p?s+' lej':'—'}</span></div>`}).join('')
+  +`<div class="bk-tot"><span>${d.tot}</span><b>${ks.some(k=>!B[k].p)?d.totq:t+' lej'}</b></div>`;
+ el.querySelectorAll('button').forEach(b=>b.onclick=()=>{B[b.dataset.k].q=Math.max(0,B[b.dataset.k].q+ +b.dataset.d);drawB()})};
+document.querySelectorAll('.label .add').forEach(b=>b.onclick=()=>{const c=b.closest('.label'),k=c.dataset.id;B[k]=B[k]||{q:0,p:+c.dataset.p};B[k].q++;
+ b.classList.add('done');setTimeout(()=>b.classList.remove('done'),700);drawB()});
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setL(b.dataset.l));
+// hamburgermenü: a felső menü linkjeit klónozza (data-i18n-nel együtt, így a nyelvváltás is frissíti)
+const burger=document.getElementById('burger'),mmenu=document.getElementById('mmenu'),mlinks=document.getElementById('mlinks');
+const thumbs={'#gazdasag':'oreg-gazda','#erleles':'bw-1','#irasok':'szena','#sajtok':'sajt-1','#latogatas':'latogatas','#rendeles':'kompot'};
+document.querySelectorAll('.nav ul a').forEach((a,i)=>{const h=a.getAttribute('href'),c=document.createElement('a');c.href=h;
+ c.innerHTML='<i>'+String(i+1).padStart(2,'0')+'</i><b data-i18n="'+a.dataset.i18n+'">'+a.textContent+'</b><span class="th"><img src="img/'+(thumbs[h]||'sajt-1')+'.webp" alt="" loading="lazy"></span>';mlinks.appendChild(c)});
+document.querySelector('.mcta').addEventListener('click',()=>setM(false));
+const setM=o=>{mmenu.classList.toggle('open',o);document.getElementById('nav').classList.toggle('mopen',o);burger.setAttribute('aria-expanded',o);mmenu.setAttribute('aria-hidden',!o);document.documentElement.style.overflow=o?'hidden':'';const dm=document.querySelector('.demo');if(dm)dm.style.opacity=o?'0':''};
+burger.onclick=()=>setM(!mmenu.classList.contains('open'));
+mlinks.querySelectorAll('a').forEach(a=>a.onclick=()=>setM(false));
+addEventListener('keydown',e=>{if(e.key==='Escape')setM(false)});
+let st='hu';try{st=localStorage.getItem('tb-lang')||'hu'}catch(e){}setL(st);
+
+// fejléc
+const nav=document.getElementById('nav'),hero=document.querySelector('.hero');
+// érlelés: a sajtkorong a görgetéssel érik
+const steps=[...document.querySelectorAll('.step')],wheel=document.getElementById('wheel'),day=document.getElementById('day'),sb=document.getElementById('steps');
+let tick=false;
+const darks=[...document.querySelectorAll('.essay,.contact,.visit')];
+const disc=document.getElementById('disc'),ring=document.getElementById('ring'),fades=[...document.querySelectorAll('.hero .fade')],stage=document.querySelector('.stage'),wordEl=document.querySelector('.word'),introEl=document.querySelector('#tortenet .wrap');
+const navSecs=[...document.querySelectorAll('.nav ul a')].map(a=>[a,document.querySelector(a.getAttribute('href'))]).filter(x=>x[1]);
+let V=(new URLSearchParams(location.search).get('v')||'d');if(new URLSearchParams(location.search).get('cmp'))document.querySelectorAll('.vsw,.demo').forEach(e=>e.remove());const goldH=document.querySelector('.word h1.rv'),photoH=document.querySelector('.word h1.photo');
+document.querySelectorAll('.vsw button').forEach(b=>{b.classList.toggle('on',b.dataset.v===V);b.onclick=()=>{V=b.dataset.v;document.querySelectorAll('.vsw button').forEach(x=>x.classList.toggle('on',x===b));history.replaceState(null,'','?v='+V);scrollTo({top:0});requestAnimationFrame(frame)}});
+const ez=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const frame=()=>{tick=false;
+ // nyitókép: a fotó görgetésre sajtkoronggá szűkül, kérget kap
+ const hq=hero.getBoundingClientRect(),hp=Math.min(1,Math.max(0,-hq.top/(hero.offsetHeight-innerHeight))),e=ez(hp);
+ const W=stage.clientWidth,H=stage.clientHeight,R0=Math.hypot(W,H)/2+30,R1=Math.min(W,H)*(W<700?.3:.24),rad=R0+(R1-R0)*e;
+ const im=disc.firstElementChild;disc.style.clipPath='';disc.style.transform='';disc.style.webkitMaskImage=disc.style.maskImage='';disc.style.opacity=1;ring.style.opacity=0;photoH.style.opacity=0;goldH.style.opacity='';
+ if(V==='a'){disc.style.clipPath=`circle(${rad.toFixed(1)}px at 50% 46%)`;im.style.transform=`scale(${1+e*.18}) rotate(${e*-8}deg)`;
+  ring.style.width=ring.style.height=(rad*2).toFixed(1)+'px';ring.style.opacity=Math.min(1,Math.max(0,(hp-.5)/.3));}
+ else if(V==='b'){ // sajtszelet: a téglalap ékké vágódik
+  const L=(a,b)=>(a+(b-a)*e).toFixed(2)+'%';const m=W<700;
+  const tip=[m?20:32,46],tr=[m?84:70,m?30:22],br=[m?84:70,m?62:70];
+  disc.style.clipPath=`polygon(${L(0,tip[0])} ${L(0,tip[1])},${L(100,tr[0])} ${L(0,tr[1])},${L(100,br[0])} ${L(100,br[1])},${L(0,tip[0])} ${L(100,tip[1])})`;
+  im.style.transform=`scale(${1+e*.12}) rotate(${e*4}deg)`;}
+ else if(V==='c'){ // sajtlyukak nyílnak, a krém átüt
+  const holes=[[22,30,1],[68,22,.8],[48,58,1.25],[82,66,.9],[14,74,.7],[36,12,.6],[90,36,.55],[60,86,.75]],D=Math.hypot(W,H);
+  const g=holes.map(([x,y,k])=>{const r=Math.max(0,(e*1.25-.05)*D*.32*k);return `radial-gradient(circle at ${x}% ${y}%,transparent ${r.toFixed(0)}px,#000 ${(r+1).toFixed(0)}px)`}).join(',');
+  disc.style.webkitMaskImage=disc.style.maskImage=g;disc.style.webkitMaskComposite='source-in';disc.style.maskComposite='intersect';
+  im.style.transform=`scale(${1+e*.1})`;}
+ else { // d: a fotó a betűkbe ömlik
+  // a háttérkép redőnyként felgördül; a felirat végig arany marad (Bence kérése)
+  disc.style.transform=`translate3d(0,${(e*-101).toFixed(2)}%,0)`;im.style.transform=`scale(${(1+e*.06).toFixed(3)})`;photoH.style.opacity=0;goldH.style.opacity=1;
+  // átmenet: a felgördülő kép alja egyre szélesebb sávban beleolvad a krémbe, és az egész kép halványul
+  const fz=Math.min(70,e*120).toFixed(1);const mk=`linear-gradient(180deg,#000 0%,#000 ${(100-fz).toFixed(1)}%,transparent 100%)`;disc.style.webkitMaskImage=disc.style.maskImage=mk;disc.style.opacity=(1-e*.55).toFixed(3);
+  // a felirat és „A mi történetünk” EGY blokként mozog: a felirat mindig fix távolságra ül a történet fölött,
+  // amíg a történet fel nem ér, a felirat a helyén marad — így egyszerre érnek a végső helyükre
+  const st=stage.getBoundingClientRect().top,natTop=st+wordEl.offsetTop+goldH.offsetTop,introTop=introEl.getBoundingClientRect().top;
+  const want=introTop-34-goldH.offsetHeight;wordEl.style.transform=`translate3d(0,${Math.min(0,want-natTop).toFixed(1)}px,0)`;}
+ fades.forEach(f=>f.style.opacity=Math.max(0,1-hp*2.4));
+ if(V!=='d')wordEl.style.transform='';
+ // menü: az aktuális szakasz linkje aláhúzva
+ let cur=null;navSecs.forEach(([a,sec])=>{const q=sec.getBoundingClientRect();if(q.top<innerHeight*.4&&q.bottom>innerHeight*.4)cur=a});navSecs.forEach(([a])=>a.classList.toggle('cur',a===cur));
+ // fejléc: sötét fölött világos/átlátszó
+ const under=darks.find(d=>{const q=d.getBoundingClientRect();return q.top<44&&q.bottom>44});
+ const onHero=hq.bottom>44&&(V==='d'?e<.38:hp<.42);
+ nav.classList.toggle('solid',!under&&!onHero);nav.classList.toggle('dk',!!under&&!under.classList.contains('visit'));
+ const r=sb.getBoundingClientRect(),vh=innerHeight;const p=Math.min(1,Math.max(0,(vh*.55-r.top)/(r.height-vh*.3)));
+ wheel.style.setProperty('--p',p.toFixed(3));day.textContent=Math.round(p*p*365)+'.';
+ let on=-1;steps.forEach((s,i)=>{if(s.getBoundingClientRect().top<vh*.62)on=i});
+ steps.forEach((s,i)=>{s.classList.toggle('on',i===Math.max(on,0));s.classList.toggle('seen',i<=on)});
+ // fotóesszé: parallax + színesedés a képernyő közepén
+ figs.forEach(f=>{const r=f.getBoundingClientRect();if(r.bottom<-50||r.top>vh+50)return;
+  const c=(r.top+r.height/2-vh/2)/vh;f.style.setProperty('--py',(c*-38).toFixed(1)+'px');f.classList.toggle('live',Math.abs(c)<.32)})};
+const figs=[...document.querySelectorAll('.collage figure')];
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(frame)}},{passive:true});frame();
+
+const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('shown',e.isIntersecting)),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+document.getElementById('vcard').onclick=function(){if(this.querySelector('iframe'))return;const f=document.createElement('iframe');f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.title='Magyarósi Csaba videója';
+ f.src='https://www.youtube-nocookie.com/embed/rWVMKSaxfh8?start=222&autoplay=1&rel=0';this.appendChild(f)};
+document.getElementById('urlap').onsubmit=e=>{e.preventDefault();document.getElementById('ok').classList.add('show')};
+document.getElementById('mapbtn').onclick=()=>{const f=document.createElement('iframe');f.loading='lazy';f.title='Térkép';
+ f.src='https://www.google.com/maps?q='+encodeURIComponent('Tejbánya, Strada Ciumani 25, Suseni')+'&output=embed';document.getElementById('map').appendChild(f)};
+</script>
+</body>
+</html>
